@@ -104,7 +104,7 @@ pycodestyle==2.7.0
 pycoingecko==2.0.0
 pycparser==2.20
 pyfolio @ git+https://github.com/quantopian/pyfolio@4b901f6d73aa02ceb6d04b7d83502e5c6f2e81aa
-Pygments==2.9.0
+Pygments==2.7.4
 pyparsing==2.4.7
 pyrsistent==0.17.3
 python-dateutil==2.8.1
