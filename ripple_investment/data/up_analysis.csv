@@ -1,0 +1,9 @@
+name,trend_increasing_perc,true,false
+trend_increasing_last_2_days,0.06333459999195971,777,811
+trend_increasing_last_3_days,0.15168075007972587,334,1254
+trend_increasing_last_4_days,0.2985722743078345,147,1441
+trend_increasing_last_5_days,0.4509774797045757,74,1514
+trend_increasing_last_6_days,0.6031504624320501,40,1548
+trend_increasing_last_7_days,0.7508854893520129,22,1566
+trend_increasing_last_8_days,1.2078947018016712,8,1580
+trend_increasing_last_9_days,0.8532226635481106,4,1584

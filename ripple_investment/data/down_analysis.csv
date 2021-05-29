@@ -1,0 +1,9 @@
+name,trend_decreasing_perc,true,false
+trend_decreasing_last_2_days,-0.03645340668132594,799.0,789
+trend_decreasing_last_3_days,-0.0711007381134199,352.0,1236
+trend_decreasing_last_4_days,-0.10516441324014783,146.0,1442
+trend_decreasing_last_5_days,-0.1478978779354785,54.0,1534
+trend_decreasing_last_6_days,-0.17307385753924212,22.0,1566
+trend_decreasing_last_7_days,-0.18030989195561345,7.0,1581
+trend_decreasing_last_8_days,-0.07366771159874608,1.0,1587
+trend_decreasing_last_9_days,,,1588
