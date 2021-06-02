@@ -142,7 +142,7 @@ Twisted==21.2.0
 txt2tags==3.7
 typer==0.3.2
 typing-extensions==3.7.4.2
-urllib3==1.25.9
+urllib3==1.26.5
 w3lib==1.22.0
 wasabi==0.8.2
 watermark==2.2.0
