@@ -6,6 +6,7 @@ import numpy as np
 
 # --------------------------------
 # RSI isn't oversold too and below 50 area...
+# A trailing stop is designed to lock in profits or limit losses as a trade moves favorably.
 
 
 def stricly_decreasing(series, n):
@@ -29,10 +30,6 @@ class Dummy(bt.Strategy):
     # ======================
     def __init__(self):
         super().__init__()
-        # self.data_close = self.datas[0].close
-        # self.data_open = self.datas[0].open
-        # self.data_high = self.datas[0].high
-        # self.data_low = self.datas[0].low
 
         self.pct_change = bt.ind.PctChange(period=self.p.period)
         # ===================================
@@ -80,7 +77,6 @@ class Dummy(bt.Strategy):
         """
         buy if close price above last n days
         """
-        # range_total = 0
         period = self.p.period
         res = []
         for i in range(-(period), 0):
@@ -119,17 +115,17 @@ class Dummy(bt.Strategy):
 
         return
 
-    def next(self):
-        # self.log(
-        #     "Next %0.2f, %0.2f, %0.2f, %0.2f"
-        #     % (
-        #         self.data.open[0],
-        #         self.data.high[0],
-        #         self.data.low[0],
-        #         self.data.close[0],
-        #     )
-        # )
-        pass
+    # def next(self):
+    #     # self.log(
+    #     #     "Next %0.2f, %0.2f, %0.2f, %0.2f"
+    #     #     % (
+    #     #         self.data.open[0],
+    #     #         self.data.high[0],
+    #     #         self.data.low[0],
+    #     #         self.data.close[0],
+    #     #     )
+    #     # )
+    #     pass
 
     def notify_order(self, order):
         if order.status in [order.Submitted, order.Accepted]:

@@ -81,7 +81,10 @@ def run_strat(data, _cash=10, period=3, name="ripple_trend"):
 if __name__ == "__main__":
     click.secho("Run Ripple", fg="green")
     data = load()
-    data = data[data["date"] > "2021-03-01"]
-    # data = data[data["date"] < "2021-07-01"]
-    run_strat(data, _cash=100)
+    data = data[data["date"] >= "2021-01-01"]
+    data = data[data["date"] < "2021-05-01"]
+    print(data.shape)
+    _period = [4]
+    for k in _period:
+        run_strat(data.copy(), _cash=1000, period=k)
     # run()
