@@ -21,7 +21,7 @@ class Dummy(bt.Strategy):
         # ("n_positions", 10),
         # ("min_positions", 5),
         ("period", 5),
-        ("stop_loss", 0.03),  # price is 2% less than entry poitn
+        # ("stop_loss", 0.03),  # price is 2% less than entry poitn
         ("verbose", False),
         ("trail", True),
         ("log_file", "backtest.csv"),
@@ -69,7 +69,6 @@ class Dummy(bt.Strategy):
             return "buy"
         sell = all([i <= j for i, j in zip(res[-n:], res[1:])])
         if sell:
-
             return "sell"
         return "other"
 
@@ -191,7 +190,6 @@ class Dummy(bt.Strategy):
             # compute signal
             _max_val = self.max_n_1()
             # signal = self._signal()
-
             if _price_close >= _max_val:
                 # buy at the next open
                 size = int(self.broker.getcash() / self.datas[0].open)
@@ -222,19 +220,19 @@ class Dummy(bt.Strategy):
             #     self.order = self.sell(size=self.position.size)
             #     pass
             # else:
-            if not self.p.trail:
-                stop_price = _price_close * (1.0 - self.p.stop_loss)
-                self.sell(exectype=bt.Order.Stop, price=stop_price)
+            # if not self.p.trail:
+            #     stop_price = _price_close * (1.0 - self.p.stop_loss)
+            #     self.sell(exectype=bt.Order.Stop, price=stop_price)
 
-            else:
-                _min_val = self.min_n_1()
-                signal = self._signal()
-                if _min_val >= _price_close:
-                    # generate sell order
-                    msg = f"SELL @price ticket: {self.data_close[0]} | {self.position.size}"
-                    self.log(msg)
-                    self.order = self.sell(size=self.position.size)
-                    # self.order = self.close()
+            # else:
+            _min_val = self.min_n_1()
+            signal = self._signal()
+            if _price_close <= _min_val:
+                # generate sell order
+                msg = f"SELL @price ticket: {self.data_close[0]} | {self.position.size}"
+                self.log(msg)
+                self.order = self.sell(size=self.position.size)
+                # self.order = self.close()
 
 
 def getpyfolio(result, name="backtrader"):
